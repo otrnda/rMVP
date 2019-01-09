@@ -155,6 +155,7 @@ nf <- ncol(X0) + 1
         stats <- beta[(q0+1)]/sqrt((iXX[(q0+1), (q0+1)]) * vgs)
         p <- 2 * pt(abs(stats), n-(q0+1), lower.tail=FALSE)
         effect<- beta[(q0+1)]
+	se <- sqrt(diag(iXX)*ves)[q0+1]
         return(list(effect = effect, p = p))
     }
     
