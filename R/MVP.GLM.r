@@ -112,7 +112,7 @@ function(phe, geno, CV=NULL, cpu=2, priority="speed", memo="MVP.GLM", bar=TRUE){
             effect <- effect[q0+1]
             t.value <- effect/sqrt(iXX[q0+1, q0+1] * ve)
             p <- 2 * pt(abs(t.value), df, lower.tail=FALSE)
-            se <- sqrt(diag(iXX)*ve[1,1])
+            se <- sqrt(diag(iXX)*ve[1,1])[q0+1]
         return(list(effect=effect, p=p))
     }
     
